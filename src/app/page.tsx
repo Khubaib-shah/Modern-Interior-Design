@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Hero from "./Hero";
 
 export default function Home() {
@@ -8,3 +7,5 @@ export default function Home() {
     </>
   );
 }
+0;
+      

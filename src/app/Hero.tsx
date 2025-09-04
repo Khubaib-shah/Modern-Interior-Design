@@ -1,7 +1,8 @@
 "use client";
+
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Autoplay, EffectCards, Navigation } from "swiper/modules";
 import Link from "next/link";
 
 // Hero
@@ -55,8 +56,57 @@ const HeroSlides = [
   },
 ];
 
+const marqueeText = [
+  "Space Planning & Layout",
+  "Color & material Consultation",
+  "Renovation",
+  "Commercial Interior Design",
+  "Furniture & Decor Selection",
+  "Structure Design",
+  "Residential Space",
+
+  "Space Planning & Layout",
+  "Color & material Consultation",
+  "Renovation",
+  "Commercial Interior Design",
+  "Furniture & Decor Selection",
+  "Structure Design",
+  "Residential Space",
+
+  "Space Planning & Layout",
+  "Color & material Consultation",
+  "Renovation",
+  "Commercial Interior Design",
+  "Furniture & Decor Selection",
+  "Structure Design",
+  "Residential Space",
+];
+
+type TabId = "his" | "mis" | "vis";
+// About Tabs
+const tabs: { id: TabId; label: string }[] = [
+  { id: "his", label: "Our History" },
+  { id: "mis", label: "Our Mission" },
+  { id: "vis", label: "Our Vision" },
+];
+
+const tabContent: Record<TabId, string[]> = {
+  his: [
+    "Founded in 2023, Khubaib Shah Associates has quickly established itself as a leader in interior and architectural design.",
+    "With a passion for creativity and a commitment to excellence, we have transformed numerous spaces into stunning environments that reflect our clients' unique styles and needs.",
+  ],
+  mis: [
+    "Our mission is to deliver innovative design solutions that enhance the quality of life for our clients.",
+    "We strive to create spaces that are not only aesthetically pleasing but also functional and sustainable, ensuring that every project we undertake exceeds expectations.",
+  ],
+  vis: [
+    "We envision a future where design plays a pivotal role in shaping the way we live and interact with our environments.",
+    "Our goal is to be at the forefront of this evolution, continuously pushing the boundaries of creativity and innovation in interior and architectural design.",
+  ],
+};
+
 const Hero = () => {
-  const [activeTab, setActiveTab] = useState("his");
+  const [activeTab, setActiveTab] = useState<TabId>("his");
 
   return (
     <>
@@ -119,6 +169,109 @@ const Hero = () => {
           </div>
         </Swiper>
       </div>
+
+      {/* Marquee */}
+      <div className="overflow-hidden whitespace-nowrap my-10 relative">
+        <div className="animate-marquee flex w-max gap-8">
+          {marqueeText.map((text, index) => (
+            <div
+              key={index}
+              className="min-w-[250px] border-2 border-gray-300 rounded-full flex items-center justify-center text-black  text-2xl font-bold uppercase px-5 py-2"
+            >
+              {text}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* About */}
+      <section className="px-[8%] lg:px-[12%] py-12 border">
+        {/* Top Section */}
+        <div className="flex flex-col lg:flex-row justify-between items-center gap-12">
+          <div className="lg:w-1/2">
+            <h2 className="text=[4rem] leading-[4rem]  lg:text-[6rem] lg:leading-[6rem] font-bold tracking-[.2rem] font-[bricolage-font]">
+              Interior & Architecture Design Solutions
+            </h2>
+          </div>
+          <div className="w-1/2">
+            <h3 className="uppercase tracking-wider font-semibold border-b pb-2 mb-6 text-sm w-fit">
+              About Us
+            </h3>
+            <p>
+              At Khubaib Shah Associates, we're committed to transforming
+              through creative vision, elegant design, and solutions that truly
+              your lifestyle.
+            </p>
+            <a
+              href="/about"
+              className="inline-flex items-center text-black font-medium hover:underline text-lg"
+            >
+              Company Info <span className="ml-2 -rotate-45 text-sm">→</span>
+            </a>
+          </div>
+        </div>
+
+        {/* Main Section */}
+
+        <div className="mt-12 flex flex-col lg:flex-row gap-10">
+          <div className="lg:w-1/2 w-full">
+            <Swiper
+              modules={[Navigation, EffectCards, Autoplay]}
+              loop={true}
+              effect="cards"
+              grabCursor={true}
+              autoplay={{ delay: 1500 }}
+              navigation={{
+                nextEl: ".swiper-about-next",
+                prevEl: ".swiper-about-prev",
+              }}
+              className="rounded"
+              style={{ padding: "30px" }}
+            >
+              {[
+                "interior-image-01.jpg",
+                "interior-image-02.jpg",
+                "interior-image-05.jpg",
+              ].map((image, index) => (
+                <SwiperSlide key={index}>
+                  <img
+                    src={`/${image}`}
+                    alt={`Slide ${index + 1}`}
+                    className="w-full h-[580px] object-cover rounded"
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+
+          {/* Tabs & Content */}
+          <div className="lg:w-1/2 w-full lg:px-10 pt-10 ">
+            <div className="flex gap-6 border-b mb-6">
+              {tabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  className={`relative pb-2 text-lg font-medium transition-colors cursor-pointer ${
+                    activeTab === tab.id
+                      ? "text-black after:absolute after:content-[''] after:bottom-0 after:left-0 after:w-full after:h-1 after:bg-black"
+                      : "text-gray-400 hover:text-black"
+                  }`}
+                  onClick={() => setActiveTab(tab.id)}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+
+            <div className="space-y-4 text-gray-700 ">
+              {tabContent[activeTab].map((para, index) => (
+                <p key={index} className="text-base leading-relaxed">
+                  {para}
+                </p>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 };
