@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "title": "Modern Family Home",
+    "image": "/property-1.jpg",
+    "desc": "Modern home with stylish design and functional living spaces.",
+    "price": "85,000"
+  },
+  {
+    "id": 2,
+    "title": "Luxury Villa",
+    "image": "/property-2.jpg",
+    "desc": "Spacious villa with a private pool and panoramic views.",
+    "price": "250,000"
+  },
+  {
+    "id": 3,
+    "title": "City Apartment",
+    "image": "/property-3.jpg",
+    "desc": "Compact apartment in the city center with modern amenities.",
+    "price": "60,000"
+  },
+  {
+    "id": 4,
+    "title": "Beachfront Condo",
+    "image": "/property-4.jpg",
+    "desc": "Relaxing condo with direct beach access and ocean views.",
+    "price": "120,000"
+  },
+  {
+    "id": 5,
+    "title": "Rustic Cabin",
+    "image": "/property-5.jpg",
+    "desc": "Cozy wooden cabin perfect for nature lovers and retreats.",
+    "price": "45,000"
+  },
+  {
+    "id": 6,
+    "title": "Penthouse Suite",
+    "image": "/property-6.jpg",
+    "desc": "Elegant penthouse with a rooftop terrace and skyline views.",
+    "price": "300,000"
+  },
+  {
+    "id": 7,
+    "title": "Countryside Cottage",
+    "image": "/property-7.jpg",
+    "desc": "Charming cottage surrounded by greenery and fresh air.",
+    "price": "55,000"
+  },
+  {
+    "id": 8,
+    "title": "Suburban House",
+    "image": "/property-8.jpg",
+    "desc": "Family-friendly home in a quiet suburban neighborhood.",
+    "price": "95,000"
+  },
+  {
+    "id": 9,
+    "title": "Loft Apartment",
+    "image": "/property-9.jpg",
+    "desc": "Trendy loft with open floor plan and industrial design.",
+    "price": "75,000"
+  },
+  {
+    "id": 10,
+    "title": "Mountain Retreat",
+    "image": "/property-10.jpg",
+    "desc": "Peaceful retreat with stunning mountain views.",
+    "price": "110,000"
+  },
+  {
+    "id": 11,
+    "title": "Smart Home",
+    "image": "/property-11.jpg",
+    "desc": "Tech-enabled home with smart security and energy systems.",
+    "price": "150,000"
+  },
+  {
+    "id": 12,
+    "title": "Lake House",
+    "image": "/property-12.jpg",
+    "desc": "Beautiful lakefront property- with private dock access.",
+    "price": "200,000"
+  }
+]

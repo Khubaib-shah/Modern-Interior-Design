@@ -41,7 +41,6 @@ body {
 }
 
 /* Animation */
-
 @keyframes Anim-fade-left {
   0% {
     transform: translateX(200px);
