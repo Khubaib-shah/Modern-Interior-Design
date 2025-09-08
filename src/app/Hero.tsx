@@ -11,6 +11,9 @@ import Image from "next/image";
 import PropertyData from "@/app/JsonData/Properties.json";
 import Gallery from "../components/Gallery";
 import DesignProcess from "../components/DesignProcess";
+import Services2 from "@/components/Services2";
+import Marquee2 from "@/components/Marquee2";
+import Services from "@/components/Services";
 
 //  =========== Content ============
 
@@ -113,175 +116,6 @@ const tabContent: Record<TabId, string[]> = {
     "Our goal is to be at the forefront of this evolution, continuously pushing the boundaries of creativity and innovation in interior and architectural design.",
   ],
 };
-
-// Design Process
-const processSteps = [
-  {
-    id: 1,
-    imgSrc: "/process-icon-1.svg",
-    title: "Consultation and initial meeting",
-    description:
-      "The architect meets with the client to discuss their needs, preferences, and budget for the project.",
-  },
-  {
-    id: 2,
-    imgSrc: "/process-icon-2.svg",
-    title: "Concept design",
-    description:
-      "Based on the client's input, the architect develops a preliminary design concept and presents it to the client for feedback.",
-  },
-  {
-    id: 3,
-    imgSrc: "/process-icon-3.svg",
-    title: "Design development",
-    description:
-      "Once the design is finalized, the architect creates detailed construction drawings and specifications for the project.",
-  },
-  {
-    id: 4,
-    imgSrc: "/process-icon-4.svg",
-    title: "Permitting and approvals",
-    description:
-      "Before construction can begin, the architecture company must obtain the necessary permits and approvals from local authorities.",
-  },
-];
-
-// Services
-const Services = [
-  {
-    icon: "/service-icon-1.svg",
-    title: "Space Planning",
-    description:
-      "Designing efficient layouts that maximize comfort and usability.",
-  },
-
-  {
-    icon: "/service-icon-2.svg",
-    title: "3D Visualization",
-    description:
-      "Providing realistic previews of designs before implementation.",
-  },
-
-  {
-    icon: "/service-icon-3.svg",
-    title: "Lighting Design",
-    description:
-      "Creating mood and function with the perfect blend of natural and artificial light.",
-  },
-
-  {
-    icon: "/service-icon-4.svg",
-    title: "Project Management",
-    description:
-      "Coordinating timelines, budgets, and contractors for seamless execution.",
-  },
-
-  {
-    icon: "/service-icon-5.svg",
-    title: "Custom Decor",
-    description:
-      "Personalizing interiors with unique accessories and artistic details.",
-  },
-
-  {
-    icon: "/service-icon-6.svg",
-    title: "Material & Finish Selection",
-    description:
-      "Selecting quality textures and finishes to enhance durability and aesthetics.",
-  },
-];
-
-// Marquee 2
-const marqueeText2 = [
-  {
-    imgs: "/property-1.jpg",
-    title: "Space Planing & Layout",
-  },
-  {
-    imgs: "/property-2.jpg",
-    title: "Color & Material Consultation",
-  },
-  {
-    imgs: "/property-3.jpg",
-    title: "Space Planing & Layout",
-  },
-  {
-    imgs: "/property-4.jpg",
-    title: "Commercial Interior Design",
-  },
-  {
-    imgs: "/property-5.jpg",
-    title: "Furniture & Decor Selection",
-  },
-];
-
-// Services
-const services2 = [
-  {
-    icon: "/structure-design-icon.png",
-    title: "Structural Engineering",
-    description:
-      "Designing safe, durable, and sustainable structures with precision and innovation.",
-  },
-  {
-    icon: "/service-icon-1.svg",
-    title: "Architectural Design",
-    description:
-      "Creating modern, functional layouts that balance beauty and practicality.",
-  },
-  {
-    icon: "/service-icon-2.svg",
-    title: "Interior Design",
-    description:
-      "Crafting stylish interiors with personalized decor, colors, and textures.",
-  },
-  {
-    icon: "/service-icon-3.svg",
-    title: "Landscape Planning",
-    description:
-      "Designing green spaces that enhance outdoor living and connect with nature.",
-  },
-  {
-    icon: "/service-icon-4.svg",
-    title: "3D Visualization",
-    description:
-      "Delivering realistic renderings so clients can preview projects before construction.",
-  },
-  {
-    icon: "/service-icon-5.svg",
-    title: "Project Management",
-    description:
-      "Coordinating timelines, resources, and teams to ensure smooth execution.",
-  },
-];
-
-// Gallery
-const galleryItems = [
-  {
-    img: "/property-1.jpg",
-    title: "Gallery 1",
-  },
-  {
-    img: "/property-2.jpg",
-    title: "Gallery 2",
-  },
-  {
-    img: "/property-3.jpg",
-    title: "Gallery 3",
-  },
-  {
-    img: "/property-4.jpg",
-    title: "Gallery 4",
-  },
-  {
-    img: "/property-5.jpg",
-    title: "Gallery 5",
-  },
-  {
-    img: "/property-6.jpg",
-    title: "Gallery 6",
-  },
-];
 
 // Testimonials
 const testimonials = [
@@ -508,52 +342,7 @@ const Hero = () => {
       <DesignProcess />
 
       {/* Services */}
-      <section className="px-[8%] lg:px-[12%] py-12 ">
-        <div className="flex flex-col lg:flex-row justify-between items-center gap-12">
-          <div className="lg:w-1/2">
-            <h2 className="text=[4rem] leading-[4rem]  lg:text-[6rem] lg:leading-[6rem] font-bold tracking-[.2rem] font-bricolage">
-              Interior Design Solutions
-            </h2>
-          </div>
-          <div className="w-1/2">
-            <h3 className="uppercase tracking-wider font-semibold border-b pb-2 mb-6 text-sm w-fit">
-              Our Services
-            </h3>
-            <p>
-              Wether you're dreaming of a cozy home retreat or a bold, modern
-              workspace, our expert designers are here to bring your vision to
-              life
-            </p>
-            <a
-              href="/services"
-              className="inline-flex items-center text-black font-medium hover:underline text-lg"
-            >
-              All Services <span className="bi bi-arrow-up-right ms-2"></span>
-            </a>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-10">
-          {Services.map(({ icon, title, description }, index) => (
-            <div
-              key={index}
-              className="border border-black p-6 rounded-xl transition-all hover:border-transparent shadow hover:shadow-lg cursor-pointer hover:-translate-y-1 group"
-            >
-              <Image
-                src={icon}
-                alt={title}
-                width={60}
-                height={60}
-                className="mb-4 transition-transform duration-700 group-hover:rotate-[-15deg]"
-              />
-              <h3 className="text-3xl relative inline-block mt-2 mb-2 after:block after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-black group-hover:after:w-full after:transition-all after:duration-300 font-semibold font-bricolage">
-                {title}
-              </h3>
-              <p className="text-gray-700 font-normal w-4/5">{description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+      <Services />
 
       {/* our Properties */}
       <section className="px-[8%] lg:px-[12%] py-12 relative">
@@ -641,98 +430,12 @@ const Hero = () => {
       </section>
 
       {/* Marquee 2 */}
-      <div className="overflow-hidden whitespace-nowrap py-12">
-        <div className="animate-marquee flex items-center gap-8">
-          {marqueeText2.map((marquee, index) => (
-            <div key={index} className="flex items-center gap-10 mr-12">
-              <div className="w-[250px] h-[100px] overflow-hidden rounded-full">
-                <Image
-                  src={marquee.imgs}
-                  alt={marquee.title}
-                  width={250}
-                  height={100}
-                  className="object-cover w-full h-full"
-                />
-              </div>
-              <div className="min-w-[250px] h-[100px] border-2 border-gray-300 rounded-full flex items-center justify-center">
-                <span className="text-black text-2xl font-bold uppercase px-4 text-center">
-                  {marquee.title}
-                </span>
-              </div>
-            </div>
-          ))}
-          {marqueeText2.map((marquee, index) => (
-            <div
-              key={`clone-${index}`}
-              className="flex items-center gap-10 mr-12"
-            >
-              <div className="w-[250px] h-[100px] overflow-hidden rounded-full">
-                <Image
-                  src={marquee.imgs}
-                  alt={marquee.title}
-                  width={250}
-                  height={100}
-                  className="object-cover w-full h-full"
-                />
-              </div>
-              <div className="min-w-[250px] h-[100px] border-2 border-gray-300 rounded-full flex items-center justify-center">
-                <span className="text-black text-2xl font-bold uppercase px-4 text-center">
-                  {marquee.title}
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+      <Marquee2 />
 
       {/* Services 2 */}
-      <section className="bg-gray-100 px-[8%] lg:px-[12%] py-16">
-        <div className="flex flex-col lg:flex-row justify-between items-center gap-12">
-          <div className="lg:w-1/2">
-            <h2 className="text=[4rem] leading-[4rem]  lg:text-[6rem] lg:leading-[6rem] font-bold tracking-[.2rem] font-bricolage">
-              Architecture <br /> Design Solution
-            </h2>
-          </div>
-          <div className="w-1/2">
-            <h3 className="uppercase tracking-wider font-semibold border-b pb-2 mb-6 text-sm w-fit">
-              Our Services
-            </h3>
-            <p>
-              Wether you're dreaming of a cozy home retreat or a bold, modern
-              workspace, our expert designers are here to bring your vision to
-              life
-            </p>
-            <a
-              href="/services"
-              className="inline-flex items-center text-black font-medium hover:underline text-lg"
-            >
-              All Services <span className="bi bi-arrow-up-right ms-2"></span>
-            </a>
-          </div>
-        </div>
+      <Services2 />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-10">
-          {services2.map(({ icon, title, description }, index) => (
-            <div
-              key={index}
-              className="border border-black p-6 rounded-xl transition-all hover:border-transparent shadow hover:shadow-lg cursor-pointer hover:-translate-y-1 group mt-10"
-            >
-              <Image
-                src={icon}
-                alt={title}
-                width={60}
-                height={60}
-                className="mb-4 transition-transform duration-700 group-hover:rotate-[-15deg]"
-              />
-              <h3 className="text-3xl relative inline-block mt-2 mb-2 after:block after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-black group-hover:after:w-full after:transition-all after:duration-300 font-semibold font-bricolage">
-                {title}
-              </h3>
-              <p className="text-gray-700 font-normal w-4/5">{description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
+      {/* Gallery */}
       <Gallery />
 
       {/* Video Banner */}

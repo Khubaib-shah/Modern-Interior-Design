@@ -7,6 +7,7 @@ import { notFound } from "next/navigation";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
+import PageTitle from "@/components/PageTitle";
 
 interface Property {
   id: number;
@@ -42,23 +43,7 @@ const PropertyDetails: React.FC<PropertyDetailsProps> = ({ params }) => {
   return (
     <>
       {/* Page Title */}
-      <div className="relative h-[60vh] overflow-hidden flex items-center justify-center">
-        <video
-          autoPlay
-          loop
-          muted
-          className="absolute top-0 left-0 w-full h-full object-cover brightness-50 z-0"
-        >
-          <source src="/page-title.mp4" type="video/mp4" />
-        </video>
-
-        <div className="absolute top-0 left-0 w-full h-full bg-black/50 z-10" />
-
-        <h1 className="text-white text-[3rem] md:text-[5rem] font-bricolage z-20">
-          {property.title}
-        </h1>
-      </div>
-
+      <PageTitle title={property.title} />
       {/* Property Details */}
       <div className="px-[8%] lg:px-[12%] py-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">

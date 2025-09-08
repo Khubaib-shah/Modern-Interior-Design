@@ -2,27 +2,13 @@ import Image from "next/image";
 import React from "react";
 import DesignProcess from "../../components/DesignProcess";
 import Gallery from "@/components/Gallery";
+import PageTitle from "@/components/PageTitle";
 
 const About = () => {
   return (
     <>
       {/* Page Title */}
-      <div className="relative h-[60vh] overflow-hidden flex items-center justify-center">
-        <video
-          autoPlay
-          loop
-          muted
-          className="absolute top-0 left-0 w-full h-full object-cover brightness-50 z-0"
-        >
-          <source src="/page-title.mp4" type="video/mp4" />
-        </video>
-
-        <div className="absolute top-0 left-0 w-full h-full bg-black/50 z-10" />
-
-        <h1 className="text-white text-[3rem] md:text-[5rem] font-bricolage z-20">
-          About Us
-        </h1>
-      </div>
+      <PageTitle title="About Us" />
 
       {/* About Us */}
       <div className="bg-white py-10">
