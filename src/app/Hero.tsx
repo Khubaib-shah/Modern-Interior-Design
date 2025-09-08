@@ -509,7 +509,7 @@ const Hero = () => {
         >
           {PropertyData.map((property) => (
             <SwiperSlide key={property.id}>
-              <Link href={`properties ${property.id}`}>
+              <Link href={`properties/${property.id}`}>
                 <div className="relative h-[450px] rounded overflow-hidden group cursor-pointer">
                   <Image
                     src={property.image}
@@ -545,6 +545,9 @@ const Hero = () => {
           <i className="bi bi-arrow-left"></i>
         </div>
       </section>
+
+      {/* Marquee 2 */}
+      {/* <div className="overflow-hidden"></div> */}
     </>
   );
 };
