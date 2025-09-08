@@ -281,6 +281,60 @@ const galleryItems = [
   },
 ];
 
+// Testimonials
+const testimonials = [
+  {
+    name: "Riyan Shah",
+    location: "Gulshan, Karachi",
+    image: "/User.jpg",
+    feedback:
+      "Khubaib Shah Associates transformed our home into a modern masterpiece. Their attention to detail and innovative designs exceeded.",
+  },
+  {
+    name: "Ayesha Khan",
+    location: "Clifton, Karachi",
+    image: "/User.jpg",
+    feedback:
+      "The team was professional and creative. They helped us design our office interior beautifully, blending style with functionality. Truly impressed!",
+  },
+  {
+    name: "Imran Ali",
+    location: "PECHS, Karachi",
+    image: "/User.jpg",
+    feedback:
+      "From consultation to execution, everything was seamless. They delivered exactly what we had in mind, and even better. Excellent work!",
+  },
+  {
+    name: "Sana Ahmed",
+    location: "Bahria Town, Karachi",
+    image: "/User.jpg",
+    feedback:
+      "We loved working with Khubaib Shah Associates. They brought fresh ideas and made sure the project was completed on time. Very satisfied!",
+  },
+  {
+    name: "Farhan Malik",
+    location: "North Nazimabad, Karachi",
+    image: "/User.jpg",
+    feedback:
+      "Their team not only understood our requirements but also guided us with better design choices. The results were outstanding!",
+  },
+  {
+    name: "Hira Fatima",
+    location: "DHA, Karachi",
+    image: "/User.jpg",
+    feedback:
+      "Super creative and reliable team! They completely upgraded our living space and turned it into something elegant and comfortable.",
+  },
+];
+
+const socialImages = [
+  "/social-slide-1.jpg",
+  "/social-slide-2.jpg",
+  "/social-slide-3.jpg",
+  "/social-slide-4.jpg",
+  "/social-slide-5.jpg",
+];
+
 const Hero = () => {
   const [activeTab, setActiveTab] = useState<TabId>("his");
 
@@ -791,6 +845,95 @@ const Hero = () => {
             Contact Us
           </button>
         </div>
+      </div>
+
+      {/* Testimonial */}
+      <section className="px-[8%] lg:px-[12%] py-20">
+        {/* Section Title */}
+        <div className="flex flex-col lg:flex-row justify-between items-center gap-8 mb-12">
+          <div className="lg:w-1/2">
+            <h2 className="text-5xl md:text-7xl font-bricolage font-bold leading-tight">
+              Client <br /> Testimonials
+            </h2>
+          </div>
+          <div className="lg:w-2/5">
+            <h3 className="text-xl font-semibold mb-2">Testimonials</h3>
+            <p className="text-gray-600">
+              Discover how our thoughtful process transforms ideas into
+              personalized, functional, and beautifully styled spaces.
+            </p>
+          </div>
+        </div>
+
+        <Swiper
+          spaceBetween={30}
+          loop={true}
+          slidesPerView={3}
+          breakpoints={{
+            640: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+          className="w-full"
+        >
+          {testimonials.map((testimonial, index) => (
+            <SwiperSlide key={index}>
+              <div className="bg-gray-100 p-8 rounded-lg shadow-lg">
+                <Image
+                  src="/qoute.svg"
+                  alt="quote"
+                  width={40}
+                  height={40}
+                  className="mb-4 opacity-25 object-contain"
+                />
+                <p className="text-gray-700 mb-6 leading-relaxed">
+                  {testimonial.feedback}
+                </p>
+                <div className="flex items-center">
+                  <Image
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    width={64}
+                    height={64}
+                    className="rounded-full object-cover"
+                  />
+                  <div className="ml-4">
+                    <h2 className="font-semibold text-lg">
+                      {testimonial.name}
+                    </h2>
+                    <p className="text-sm text-gray-500">
+                      {testimonial.location}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </section>
+
+      {/* Social Images */}
+      <div className="w-full h-[500px]">
+        <Swiper
+          modules={[Autoplay]}
+          spaceBetween={0}
+          slidesPerView={2}
+          loop={true}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          className="w-full h-full"
+        >
+          {socialImages.map((src, index) => (
+            <SwiperSlide key={index}>
+              <div className="w-full h-full">
+                <img
+                  src={src}
+                  alt={`Social Slide ${index + 1}`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </>
   );
