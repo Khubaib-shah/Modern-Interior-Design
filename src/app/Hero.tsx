@@ -9,6 +9,8 @@ import Image from "next/image";
 // ============ Json Data ============
 
 import PropertyData from "@/app/JsonData/Properties.json";
+import Gallery from "../components/Gallery";
+import DesignProcess from "../components/DesignProcess";
 
 //  =========== Content ============
 
@@ -503,61 +505,7 @@ const Hero = () => {
       </section>
 
       {/* Design Process */}
-      <div className="bg-gray-100 px-[8%] lg:px-[12%] py-16">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row justify-between items-center mb-12">
-            <div className="lg:w-1/2 mb-10 lg:mb-0">
-              <h1 className="text-8xl font-bricolage font-semibold">
-                Our Design Process
-              </h1>
-            </div>
-            <div className="lg:w-1/3">
-              <h3 className="uppercase tracking-wider font-semibold border-b pb-2 mb-6 text-sm w-fit">
-                Process
-              </h3>
-
-              <p>
-                Discover how our process transform ideas into personalized,
-                functional, and styled spaces.
-              </p>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 pt-10">
-            {processSteps.map(({ id, imgSrc, title, description }) => (
-              <div
-                key={id}
-                className="flex flex-col items-center cursor-pointer relative group"
-              >
-                {/* circle with image and number */}
-                <div className="w-[170px] h-[170px] rounded-full shadow-lg flex items-center justify-center hover:-translate-y-1.5 transition-transform duration-200">
-                  <Image
-                    src={imgSrc}
-                    alt={`Process ste ${id}`}
-                    className="w-[70px] transition-transform duration-500 ease-out group-hover:-rotate-y-360"
-                    width={100}
-                    height={100}
-                  />
-
-                  <span className="absolute -top-3 rotate-3 bg-black text-white size-8 flex items-center justify-center rounded-full text-sm font-semibold select-none">
-                    {id}.
-                  </span>
-                </div>
-
-                {/* Title */}
-                <h2 className="font-bricolage  text-xl mt-6 mb-4 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-black after:w-0 group-hover:after:w-full after:transition-width after:duration-300">
-                  {title}
-                </h2>
-
-                {/* Description */}
-                <p className="text-center text-gray-600 text-base max-w-[70%] mx-auto">
-                  {description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+      <DesignProcess />
 
       {/* Services */}
       <section className="px-[8%] lg:px-[12%] py-12 ">
@@ -785,44 +733,7 @@ const Hero = () => {
         </div>
       </section>
 
-      {/* Gallery */}
-      <section className="bg-gray-100 px-[8%] lg:px-[12%] py-16">
-        <div className="container mx-auto px-4">
-          <h1 className="text-8xl font-bricolage font-bold mb-10">Gallery</h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {galleryItems.map((item, index) => (
-              <div
-                key={index}
-                className="relative h-[400px] rounded overflow-hidden group cursor-pointer"
-              >
-                <a
-                  href={item.img}
-                  data-lightbox={item.lightbox}
-                  data-title={item.title}
-                  aria-label={`View ${item.title}`}
-                  className="block relative w-full h-full overflow-hidden rounded-md"
-                >
-                  {/* Image */}
-                  <Image
-                    src={item.img}
-                    alt={item.title}
-                    fill
-                    sizes="100%"
-                    className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
-                  />
-
-                  {/* Overlay Title */}
-                  <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent z-30 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-in-out">
-                    <h4 className="text-white text-2xl md:text-3xl font-bricolage">
-                      {item.title}
-                    </h4>
-                  </div>
-                </a>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Gallery />
 
       {/* Video Banner */}
       <div className="relative w-full h-[500px] overflow-hidden">

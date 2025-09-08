@@ -6,7 +6,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectCards, Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 
 interface Property {
   id: number;
@@ -25,6 +25,7 @@ interface PropertyDetailsProps {
 
 const PropertyDetails: React.FC<PropertyDetailsProps> = ({ params }) => {
   const { id } = params;
+  console.log(id);
 
   const property: Property | undefined = PropertyData.find(
     (item: Property) => item.id === parseInt(id)
@@ -36,9 +37,11 @@ const PropertyDetails: React.FC<PropertyDetailsProps> = ({ params }) => {
     (item: Property) =>
       item.id !== property?.id && item.location === property?.location
   );
+  console.log(relatedProperties.map((p) => p.id));
 
   return (
     <>
+      {/* Page Title */}
       <div className="relative h-[60vh] overflow-hidden flex items-center justify-center">
         <video
           autoPlay
@@ -169,6 +172,8 @@ const PropertyDetails: React.FC<PropertyDetailsProps> = ({ params }) => {
           </div>
         </div>
       </div>
+
+      {/* Related Properties */}
       <div className="px-[8%] lg:px-[12%] py-16 bg-gray-50">
         {" "}
         <h2 className="text-3xl md:text-4xl font-bold mb-10">
@@ -197,7 +202,7 @@ const PropertyDetails: React.FC<PropertyDetailsProps> = ({ params }) => {
         >
           {relatedProperties.map((property) => (
             <SwiperSlide key={property.id}>
-              <Link href={`properties/${property.id}`}>
+              <Link href={`/properties/${property.id}`}>
                 <div className="relative h-[450px] rounded overflow-hidden group cursor-pointer">
                   <Image
                     src={property.image}
