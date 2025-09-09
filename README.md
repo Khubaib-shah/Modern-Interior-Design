@@ -23,17 +23,6 @@ npm install     # or yarn / pnpm
 npm run dev     # or yarn dev / pnpm dev
 # Open http://localhost:3000
 
-.
-├── public/               # Static assets like images
-├── src/
-│   ├── pages/            # Next.js pages
-│   ├── components/       # Reusable UI components
-├── .gitignore
-├── package.json
-├── next.config.ts
-├── tsconfig.json
-└── README.md
-
 Deployed on Vercel — simply connect your GitHub repo and it deploys automatically.
 
 
