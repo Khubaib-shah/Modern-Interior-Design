@@ -1,30 +1,25 @@
 # Modern Interior Design
 
-A modern, clean, and responsive interior design showcase built with Next.js and TypeScript.
+A modern, responsive interior design showcase built with Next.js, TypeScript, and custom CSS.
 
-Live Demo: [Link] ()
+## Demo
+Live demo: [Add your URL here]
 
-- Features
-- Tech Stack
-- Getting Started
-- Usage
-- Project Structure
-- Contributing
-- License
+## Features
+- Fast and SEO-friendly with Next.js
+- Type-safe development with TypeScript
+- Clean, minimal design
+- Geist font integration for refined typography
 
-- Next.js (React framework)
+## Tech Stack
+- Next.js
 - TypeScript
-- CSS (possibly with PostCSS)
-- Geist font (via Next.js font optimization)
+- CSS / PostCSS
+- Geist font
 
-git clone https://github.com/Khubaib-shah/Modern-Interior-Design.git
+## Getting Started
+```bash
+git clone [repo url]
 cd Modern-Interior-Design
-npm install     # or yarn / pnpm
-npm run dev     # or yarn dev / pnpm dev
-# Open http://localhost:3000
-
-Deployed on Vercel — simply connect your GitHub repo and it deploys automatically.
-
-
-Contributions are welcome! Please open an issue or submit a pull request for enhancements or bug fixes.
-
+npm install
+npm run dev
