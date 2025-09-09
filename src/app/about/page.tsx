@@ -89,7 +89,8 @@ const About = () => {
                 way our clients live, Work and experience their surroundings. We
                 are committed to delivering exceptional design solutions that
                 blend creativity with practicality, transforming every
-                environment into a reflection of the client's unique vision.
+                environment into a reflection of the client&apos;s unique
+                vision.
               </p>
               <p className="text-gray-800 leading-relaxed">
                 We strive to build lasting relationships with our clients,
