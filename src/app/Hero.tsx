@@ -106,7 +106,7 @@ const tabs: { id: TabId; label: string }[] = [
 const tabContent: Record<TabId, string[]> = {
   his: [
     "Founded in 2023, Khubaib Shah Associates has quickly established itself as a leader in interior and architectural design.",
-    "With a passion for creativity and a commitment to excellence, we have transformed numerous spaces into stunning environments that reflect our clients' unique styles and needs.",
+    "With a passion for creativity and a commitment to excellence, we have transformed numerous spaces into stunning environments that reflect our clients unique styles and needs.",
   ],
   mis: [
     "Our mission is to deliver innovative design solutions that enhance the quality of life for our clients.",
@@ -265,7 +265,7 @@ const Hero = () => {
               About Us
             </h3>
             <p>
-              At Khubaib Shah Associates, we're committed to transforming
+              At Khubaib Shah Associates, we&apos;re committed to transforming
               through creative vision, elegant design, and solutions that truly
               your lifestyle.
             </p>
@@ -300,10 +300,11 @@ const Hero = () => {
                 "interior-image-05.jpg",
               ].map((image, index) => (
                 <SwiperSlide key={index}>
-                  <img
+                  <Image
                     src={`/${image}`}
                     alt={`Slide ${index + 1}`}
                     className="w-full h-[580px] object-cover rounded"
+                    fill
                   />
                 </SwiperSlide>
               ))}
@@ -318,7 +319,7 @@ const Hero = () => {
                   key={tab.id}
                   className={`relative pb-2 text-lg font-medium transition-colors cursor-pointer ${
                     activeTab === tab.id
-                      ? "text-black after:absolute after:content-[''] after:bottom-0 after:left-0 after:w-full after:h-1 after:bg-black"
+                      ? "text-black after:absolute after:content-[] after:bottom-0 after:left-0 after:w-full after:h-1 after:bg-black"
                       : "text-gray-400 hover:text-black"
                   }`}
                   onClick={() => setActiveTab(tab.id)}
@@ -517,10 +518,11 @@ const Hero = () => {
           {socialImages.map((src, index) => (
             <SwiperSlide key={index}>
               <div className="w-full h-full">
-                <img
+                <Image
                   src={src}
                   alt={`Social Slide ${index + 1}`}
                   className="w-full h-full object-cover"
+                  fill
                 />
               </div>
             </SwiperSlide>
