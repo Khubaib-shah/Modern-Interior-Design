@@ -1,8 +1,18 @@
 import React from "react";
 
-const PageTitle = ({ title }: { title: string }) => {
+const PageTitle = ({
+  title,
+  className,
+}: {
+  title: string;
+  className: string;
+}) => {
   return (
-    <div className="relative h-[60vh] overflow-hidden flex items-center justify-center">
+    <div
+      className={`relative ${
+        className ? className : "h-[65vh]"
+      } overflow-hidden flex items-center justify-center`}
+    >
       <video
         autoPlay
         loop
