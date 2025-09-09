@@ -1,4 +1,3 @@
-import Properties from "@/app/properties/page";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";

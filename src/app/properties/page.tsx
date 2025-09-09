@@ -17,7 +17,7 @@ const Properties = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {PropertyData.map((property) => {
-            return <PropertyCard property={property} />;
+            return <PropertyCard key={property.id} property={property} />;
           })}
         </div>
       </div>
