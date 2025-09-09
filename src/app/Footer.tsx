@@ -18,7 +18,7 @@ const Footer = () => {
             {/* Left col */}
             <div className="lg:w-1/2 pr-10 lg:pr-0">
               <h2 className="font-bricolage text-6xl mb-6">
-                we'd love cooperate to build amazing{" "}
+                we&apos;d love cooperate to build amazing
                 <span className="word-animate"></span>
               </h2>
               <p className="my-5 text-lg font-medium">
@@ -44,6 +44,7 @@ const Footer = () => {
                 </h4>
               </div>
             </div>
+
             {/* Right col */}
             <div className="lg:w-1/2 flex flex-col lg:flex-row gap-8 lg:gap-12">
               <div>

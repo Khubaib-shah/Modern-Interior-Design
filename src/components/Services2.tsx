@@ -54,7 +54,7 @@ const Services2 = () => {
             Our Services
           </h3>
           <p>
-            Wether you're dreaming of a cozy home retreat or a bold, modern
+            Wether you&apos;re dreaming of a cozy home retreat or a bold, modern
             workspace, our expert designers are here to bring your vision to
             life
           </p>

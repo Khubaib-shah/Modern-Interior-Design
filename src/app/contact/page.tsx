@@ -12,10 +12,10 @@ const Contact = () => {
           <div className="flex flex-col lg:flex-row gap-10">
             {/* Left side */}
             <div className="lg:w-1/2 space-y-6">
-              <h1>Lets's Talk</h1>
+              <h1>Lets&apos;s Talk</h1>
               <h2 className="text-xl text-gray-700">
-                Let's start transforming your space-reach out and bring your
-                vision to life today.
+                Let&apos;s start transforming your space-reach out and bring
+                your vision to life today.
               </h2>
 
               <div className="space-y-4">

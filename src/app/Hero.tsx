@@ -430,7 +430,7 @@ const Hero = () => {
 
         <div className="absolute inset-0 bg-black/70 flex flex-col items-center justify-center text-center px-4 z-10">
           <h2 className="text-5xl md:text-6xl font-bricolage font-bold text-white">
-            Ready For An Upgrade? Let's Talk
+            Ready For An Upgrade? Let&apos;s Talk
           </h2>
 
           <button className="mt-10 px-6 py-3 cursor-pointer bg-white text-black font-semibold rounded hover:bg-gray-200 transition hover:translate-y-1">
