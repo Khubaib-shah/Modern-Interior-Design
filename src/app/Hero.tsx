@@ -304,7 +304,9 @@ const Hero = () => {
                     src={`/${image}`}
                     alt={`Slide ${index + 1}`}
                     className="w-full h-[580px] object-cover rounded"
-                    fill
+                    width={1200}
+                    height={580}
+                    priority={index === 0}
                   />
                 </SwiperSlide>
               ))}
