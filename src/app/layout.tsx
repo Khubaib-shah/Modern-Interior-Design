@@ -29,6 +29,26 @@ const bricolage = Bricolage_Grotesque({
 export const metadata: Metadata = {
   title: "Living Lines",
   description: "LivingLines Properties Listening",
+  authors: [
+    {
+      name: "Khubaib Shah",
+      url: "https://khubaib-portfolio-seven.vercel.app/",
+    },
+  ],
+  keywords: [
+    "interior design",
+    "home decoration",
+    "minimalistic",
+    "aesthetic",
+    "complexity",
+    "modern",
+    "grayscale",
+    "wooden",
+    "professional",
+    "stylish",
+    "luxury",
+    "old money",
+  ],
 };
 
 export default function RootLayout({

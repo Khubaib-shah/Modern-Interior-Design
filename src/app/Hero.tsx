@@ -519,7 +519,7 @@ const Hero = () => {
         >
           {socialImages.map((src, index) => (
             <SwiperSlide key={index}>
-              <div className="w-full h-full">
+              <div className="w-full h-full relative">
                 <Image
                   src={src}
                   alt={`Social Slide ${index + 1}`}
