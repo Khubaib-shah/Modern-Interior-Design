@@ -23,9 +23,9 @@ export default async function PropertyDetails({
 }: {
   params: Promise<{ id: string }>;
 }) {
-  const { id } = await params;
+  console.log(params);
 
-  console.log(id);
+  const { id } = await params;
 
   const property: Property | undefined = PropertyData.find(
     (item: Property) => item.id === parseInt(id)
