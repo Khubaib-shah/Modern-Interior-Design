@@ -15,7 +15,7 @@ type PropertyCardProps = {
 const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
   console.log(property);
   return (
-    <Link href={`properties/${property.id}`}>
+    <Link href={`/properties/${property.id}`}>
       <div className="relative h-[450px] rounded overflow-hidden group cursor-pointer">
         <Image
           src={property.image}
