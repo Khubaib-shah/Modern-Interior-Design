@@ -1,4 +1,5 @@
 import PageTitle from "@/components/PageTitle";
+import Image from "next/image";
 import React from "react";
 
 const Contact = () => {
@@ -98,9 +99,11 @@ const Contact = () => {
           <div className="bg-white rounded flex flex-col md:flex-row gap-6 p-10 items-center shadow-md">
             {/* Image */}
             <div className="w-full md:w-2/5 h-[400px]">
-              <img
-                src="contact-banner.jpg"
+              <Image
+                src="/contact-banner.jpg"
                 alt="contact-banner"
+                width={1200}
+                height={600}
                 className="w-full h-full object-cover rounded-2xl"
               />
             </div>

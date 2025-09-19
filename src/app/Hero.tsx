@@ -364,12 +364,12 @@ const Hero = () => {
               we build our projects with your dreams and ideas. Touch modern
               concepts and designs with Khubaib Shah Associates.
             </p>
-            <a
+            <Link
               href="/properties"
               className="inline-flex items-center text-black font-medium hover:underline text-lg"
             >
               View More <i className="bi bi-arrow-up-right ms-2"></i>
-            </a>
+            </Link>
           </div>
         </div>
 

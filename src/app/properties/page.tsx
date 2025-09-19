@@ -1,8 +1,6 @@
 import PageTitle from "@/components/PageTitle";
-import Link from "next/link";
 import React from "react";
 import PropertyData from "@/app/JsonData/Properties.json";
-import Image from "next/image";
 import PropertyCard from "@/components/PropertyCard";
 
 const Properties = () => {
