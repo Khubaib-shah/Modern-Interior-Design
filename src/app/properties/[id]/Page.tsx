@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import PageTitle from "@/components/PageTitle";
 import RelatedProperties from "@/components/RelatedProperties";
 
+export const dynamicParams = true;
 export async function generateStaticParams() {
   return [{ id: "1" }, { id: "2" }, { id: "3" }];
 }
