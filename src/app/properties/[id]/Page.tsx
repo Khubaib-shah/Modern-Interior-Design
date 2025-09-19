@@ -5,8 +5,11 @@ import PageTitle from "@/components/PageTitle";
 import RelatedProperties from "@/components/RelatedProperties";
 
 export const dynamicParams = true;
+
 export async function generateStaticParams() {
-  return [{ id: "1" }, { id: "2" }, { id: "3" }];
+  return PropertyData.map((p) => ({
+    id: p.id.toString(),
+  }));
 }
 
 interface Property {
@@ -21,11 +24,9 @@ interface Property {
 export default async function PropertyDetails({
   params,
 }: {
-  params: Promise<{ id: string }>;
+  params: { id: string };
 }) {
-  console.log(params);
-
-  const { id } = await params;
+  const { id } = params;
 
   const property: Property | undefined = PropertyData.find(
     (item: Property) => item.id === parseInt(id)
