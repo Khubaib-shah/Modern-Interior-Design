@@ -21,7 +21,7 @@ interface Property {
   location?: string;
 }
 
-export default async function PropertyDetails({
+export default function PropertyDetails({
   params,
 }: {
   params: { id: string };
@@ -32,7 +32,7 @@ export default async function PropertyDetails({
     (item: Property) => item.id === parseInt(id)
   );
 
-  if (!property) notFound();
+  if (!property) return notFound();
 
   const relatedProperties: Property[] = PropertyData.filter(
     (item: Property) =>
@@ -76,7 +76,8 @@ export default async function PropertyDetails({
                 <span className="font-semibold">Area:</span> 2200 Sq. Ft.
               </p>
               <p className="p-2 rounded border border-gray-800">
-                <span className="font-semibold">Location:</span> USA
+                <span className="font-semibold">Location:</span>{" "}
+                {property.location || "Unknown"}
               </p>
               <p className="p-2 rounded border border-gray-800">
                 <span className="font-semibold">Design By:</span> John Doe.
@@ -87,14 +88,13 @@ export default async function PropertyDetails({
             </div>
 
             <p className="mt-3 font-bricolage text-gray-700">
-              A cozy and modern home designed for comfortable living, Properties
-              3 combines practical layout with stylish details. Perfect for
-              those seeking a peaceful and affordable residence.
+              A cozy and modern home designed for comfortable living. Perfect
+              for those seeking a peaceful and affordable residence.
             </p>
             <p className="mt-3 font-bricolage text-gray-700">
               This charming property offers a bright and inviting space, ideal
-              for a growing family or anyone looking for. Experience comfort and
-              convenience in a beautiful home.
+              for a growing family. Experience comfort and convenience in a
+              beautiful home.
             </p>
           </div>
         </div>
@@ -104,11 +104,10 @@ export default async function PropertyDetails({
       <div className="px-[8%] lg:px-[12%] py-16">
         <h1 className="text-6xl font-bricolage font-bold mb-10">Description</h1>
         <p className="font-bricolage text-lg mb-2">
-          This 22000 sqft residence in Prabha Colony, Godhra showcases a subtle
-          and sophisticated approach to modern living. Designed with a
-          minimalist mindset, the home balances functionality with elegance
-          through clean geometry, soft neutral tones, and purposeful spatial
-          planning.
+          This residence showcases a subtle and sophisticated approach to modern
+          living. Designed with a minimalist mindset, the home balances
+          functionality with elegance through clean geometry, soft neutral
+          tones, and purposeful spatial planning.
         </p>
         <p className="font-bricolage text-lg mb-2">
           A minimal yet impactful approach, tailored for healing and clarity.
