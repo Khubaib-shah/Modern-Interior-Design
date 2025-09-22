@@ -7,8 +7,8 @@ import RelatedProperties from "@/components/RelatedProperties";
 export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  return PropertyData.map((p) => ({
-    id: p.id.toString(),
+  return PropertyData.map((property) => ({
+    id: property.id.toString(),
   }));
 }
 
@@ -21,12 +21,18 @@ interface Property {
   location?: string;
 }
 
-export default function PropertyDetails({
+export default async function PropertyDetails({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
-  const { id } = params;
+  const { id } = await params;
+
+  if (!id) {
+    return (
+      <span className="text-red-400">Error: Params Id is not available</span>
+    );
+  }
 
   const property: Property | undefined = PropertyData.find(
     (item: Property) => item.id === parseInt(id)
