@@ -26,7 +26,7 @@ export default async function PropertyDetails({
 }: {
   params: Promise<{ id: string }>;
 }) {
-  const { id } = await params;
+  const id = (await params).id;
 
   if (!id) {
     return (
