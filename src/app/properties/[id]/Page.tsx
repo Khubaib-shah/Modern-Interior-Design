@@ -1,4 +1,4 @@
-import PropertyData from "@/app/JsonData/Properties.json";
+import PropertyData from "@/JsonData/Properties.json";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import PageTitle from "@/components/PageTitle";

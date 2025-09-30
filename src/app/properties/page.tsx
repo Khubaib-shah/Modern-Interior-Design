@@ -1,6 +1,6 @@
 import PageTitle from "@/components/PageTitle";
 import React from "react";
-import PropertyData from "@/app/JsonData/Properties.json";
+import PropertyData from "@/JsonData/Properties.json";
 import PropertyCard from "@/components/PropertyCard";
 
 const Properties = () => {

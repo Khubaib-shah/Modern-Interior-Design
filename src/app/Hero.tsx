@@ -8,7 +8,7 @@ import Image from "next/image";
 
 // ============ Json Data ============
 
-import PropertyData from "@/app/JsonData/Properties.json";
+import PropertyData from "@/JsonData/Properties.json";
 import Gallery from "../components/Gallery";
 import DesignProcess from "../components/DesignProcess";
 import Services2 from "@/components/Services2";
