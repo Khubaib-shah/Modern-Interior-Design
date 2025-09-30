@@ -3,7 +3,7 @@ import { Bricolage_Grotesque, Geist, Geist_Mono, Jost } from "next/font/google";
 import "./globals.css";
 import Nav from "./Nav";
 import Footer from "./Footer";
-
+import { SpeedInsights } from "@vercel/speed-insights/next";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -64,6 +64,7 @@ export default function RootLayout({
         <Nav />
         {children}
         <Footer />
+        <SpeedInsights />
       </body>
     </html>
   );
