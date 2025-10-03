@@ -171,3 +171,5 @@ export default function PropertyDetails() {
     </>
   );
 }
+
+export const dynamic = "force-dynamic";
