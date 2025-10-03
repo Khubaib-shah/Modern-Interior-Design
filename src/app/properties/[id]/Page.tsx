@@ -1,16 +1,11 @@
+"use client";
+
+import { useParams } from "next/navigation";
 import PropertyData from "@/JsonData/Properties.json";
 import Image from "next/image";
-import { notFound } from "next/navigation";
 import PageTitle from "@/components/PageTitle";
 import RelatedProperties from "@/components/RelatedProperties";
-
-export const dynamicParams = true;
-
-export async function generateStaticParams() {
-  return PropertyData.map((property) => ({
-    id: property.id.toString(),
-  }));
-}
+import { useEffect, useState } from "react";
 
 interface Property {
   id: number;
@@ -21,29 +16,44 @@ interface Property {
   location?: string;
 }
 
-export default async function PropertyDetails({
-  params,
-}: {
-  params: Promise<{ id: string }>;
-}) {
-  const id = (await params).id;
+export default function PropertyDetails() {
+  const params = useParams();
+  const id = params?.id ? parseInt(params.id as string) : null;
+
+  const [property, setProperty] = useState<Property | null>(null);
+  const [relatedProperties, setRelatedProperties] = useState<Property[]>([]);
+
+  useEffect(() => {
+    if (!id) return;
+
+    const foundProperty = PropertyData.find((item: Property) => item.id === id);
+
+    if (foundProperty) {
+      setProperty(foundProperty);
+      const related = PropertyData.filter(
+        (item: Property) => item.id !== foundProperty.id
+      );
+      setRelatedProperties(related);
+    } else {
+      setProperty(null);
+    }
+  }, [id]);
 
   if (!id) {
     return (
-      <span className="text-red-400">Error: Params Id is not available</span>
+      <span className="text-red-500 text-center block mt-10">
+        Error: Property ID is missing.
+      </span>
     );
   }
 
-  const property: Property | undefined = PropertyData.find(
-    (item: Property) => item.id === parseInt(id)
-  );
-
-  if (!property) return notFound();
-
-  const relatedProperties: Property[] = PropertyData.filter(
-    (item: Property) =>
-      item.id !== property.id && item.location === property.location
-  );
+  if (!property) {
+    return (
+      <span className="text-red-500 text-center block mt-10">
+        Property not found.
+      </span>
+    );
+  }
 
   return (
     <>
@@ -125,34 +135,28 @@ export default async function PropertyDetails({
         <h1 className="text-3xl md:text-4xl font-bold mb-10">Amenities</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-gray-700">
           <div className="flex items-center gap-3">
-            <i className="bi bi-lightning-charge text-yellow-600 text-2xl">
-              <span className="font-medium">Power Back Up</span>
-            </i>
+            <i className="bi bi-lightning-charge text-yellow-600 text-2xl" />
+            <span className="font-medium">Power Back Up</span>
           </div>
           <div className="flex items-center gap-3">
-            <i className="bi bi-wifi text-yellow-600 text-2xl">
-              <span className="font-medium">Internet/Wifi Connectivity</span>
-            </i>
+            <i className="bi bi-wifi text-yellow-600 text-2xl" />
+            <span className="font-medium">Internet/Wifi Connectivity</span>
           </div>
           <div className="flex items-center gap-3">
-            <i className="bi bi-tools text-yellow-600 text-2xl">
-              <span className="font-medium">Maintenance Staff</span>
-            </i>
+            <i className="bi bi-tools text-yellow-600 text-2xl" />
+            <span className="font-medium">Maintenance Staff</span>
           </div>
           <div className="flex items-center gap-3">
-            <i className="bi bi-list text-yellow-600 text-2xl">
-              <span className="font-medium">Lift</span>
-            </i>
+            <i className="bi bi-list text-yellow-600 text-2xl" />
+            <span className="font-medium">Lift</span>
           </div>
           <div className="flex items-center gap-3">
-            <i className="bi bi-building text-yellow-600 text-2xl">
-              <span className="font-medium">Vaastu Complaint</span>
-            </i>
+            <i className="bi bi-building text-yellow-600 text-2xl" />
+            <span className="font-medium">Vaastu Complaint</span>
           </div>
           <div className="flex items-center gap-3">
-            <i className="bi bi-houses text-yellow-600 text-2xl">
-              <span className="font-medium">Rentable Community Space</span>
-            </i>
+            <i className="bi bi-houses text-yellow-600 text-2xl" />
+            <span className="font-medium">Rentable Community Space</span>
           </div>
         </div>
       </div>
