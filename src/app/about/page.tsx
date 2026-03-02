@@ -38,14 +38,15 @@ const About = () => {
         {/* Vision Section */}
         <div className="container mx-auto px-4 mb-12">
           <div className="flex flex-col lg:flex-row items-center">
-            <div className="lg:w-1/2 mb-6 lg:mb-0 overflow-hidden rounded-lg">
-              <Image
-                src="/ab-vision-image1.jpeg"
-                alt="Vision"
-                width={100}
-                height={80}
-                className="object-cover"
-              />
+            <div className="lg:w-1/2 w-full mb-6 lg:mb-0 overflow-hidden rounded-lg">
+            <Image
+              src="/ab-vision-image1.jpeg"
+              alt="Vision"
+              width={1200}
+              height={800}
+              className="w-full h-[400px] object-cover"
+              quality={100}
+            />
             </div>
 
             <div className="lg:w-1/2 lg:pl-12">
@@ -73,14 +74,15 @@ const About = () => {
         {/* Vision Section */}
         <div className="container mx-auto px-4 mb-12">
           <div className="flex flex-col lg:flex-row-reverse items-center">
-            <div className="lg:w-1/2 mb-6 lg:mb-0 overflow-hidden rounded-lg">
-              <Image
-                src="/ab-vision-image2.jpeg"
-                alt="Vision"
-                width={100}
-                height={80}
-                className="object-cover"
-              />
+           <div className="lg:w-1/2 w-full mb-6 lg:mb-0 overflow-hidden rounded-lg">
+            <Image
+              src="/ab-vision-image2.jpeg"
+              alt="Vision"
+              width={1200}
+              height={800}
+              className="w-full h-[400px] object-cover"
+              quality={100}
+            />
             </div>
             <div className="lg:w-1/2 lg:pl-12">
               <p className="mb-4 text-gray-700 leading-relaxed">
