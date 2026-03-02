@@ -44,7 +44,7 @@ const About = () => {
                 alt="Vision"
                 width={100}
                 height={80}
-                className="w-full h-[500px] object-cover"
+                className="object-cover"
               />
             </div>
 
@@ -79,7 +79,7 @@ const About = () => {
                 alt="Vision"
                 width={100}
                 height={80}
-                className="w-full h-[500px] object-cover"
+                className="object-cover"
               />
             </div>
             <div className="lg:w-1/2 lg:pl-12">
